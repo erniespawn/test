@@ -19,9 +19,41 @@ jobs:
           github_token: ${{ secrets.github_token }}
 
 
-  staging-server:
+  orange-server:
     needs: run-linters
-    environment: staging
+    environment: orange
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      # Install your linters here
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+
+  banana-server:
+    needs: run-linters
+    environment: banana
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      # Install your linters here
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+
+  apple-server:
+    needs: run-linters
+    environment: apple
     runs-on: ubuntu-latest
 
     steps:
