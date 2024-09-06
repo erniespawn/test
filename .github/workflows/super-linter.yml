@@ -21,7 +21,7 @@ jobs:
 
   production-server1:
     needs: staging
-    environment: orange
+    environment: production-server1
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +37,7 @@ jobs:
 
   production-server2:
     needs: staging
-    environment: banana
+    environment: production-server2
     runs-on: ubuntu-latest
 
     steps:
@@ -53,7 +53,7 @@ jobs:
 
   production-server3:
     needs: staging
-    environment: apple
+    environment: production-server3
     runs-on: ubuntu-latest
 
     steps:
