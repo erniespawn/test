@@ -1,18 +1,19 @@
-name: Lint Code Base
+name: Lint
 
-on: [push, pull_request]
+on: push
 
 jobs:
-  build:
-    name: Lint Code Base
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
 
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      # Install your linters here
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
         with:
-          fetch-depth: 0
-
-      - name: Lint Code Base
-        uses: github/super-linter@v4
+          github_token: ${{ secrets.github_token }}
