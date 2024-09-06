@@ -3,7 +3,7 @@ name: Lint
 on: push
 
 jobs:
-  run-linters:
+  staging:
     name: Run linters
     runs-on: ubuntu-latest
 
@@ -19,7 +19,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
 
 
-  orange-server:
+  production-server1:
     needs: run-linters
     environment: orange
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
 
-  banana-server:
+  production-server2:
     needs: run-linters
     environment: banana
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
 
-  apple-server:
+  production-server3:
     needs: run-linters
     environment: apple
     runs-on: ubuntu-latest
