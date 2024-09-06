@@ -20,7 +20,7 @@ jobs:
 
 
   production-server1:
-    needs: run-linters
+    needs: staging
     environment: orange
     runs-on: ubuntu-latest
 
@@ -36,7 +36,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
 
   production-server2:
-    needs: run-linters
+    needs: staging
     environment: banana
     runs-on: ubuntu-latest
 
@@ -52,7 +52,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
 
   production-server3:
-    needs: run-linters
+    needs: staging
     environment: apple
     runs-on: ubuntu-latest
 
